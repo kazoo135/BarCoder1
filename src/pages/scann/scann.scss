@@ -1,0 +1,29 @@
+page-scann {
+
+	[ion-title] span{
+		display: block;
+		margin-left:35px; 
+	}
+
+	ion-icon.logo{
+		margin-left: 10px;
+	}
+
+	.my-header{
+		font-size: 1.2em;
+		text-align: center;
+	}
+
+	.item-align{
+		text-align: center;
+	}
+
+	[ion-item] span{
+		font-weight: bold;
+	}
+
+	[ion-item] span.safety{
+		color: red;
+	}
+
+}

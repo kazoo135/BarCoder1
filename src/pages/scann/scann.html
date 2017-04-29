@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Scann page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+  <ion-title>
+   <ion-icon class="logo" name="barcode"></ion-icon>  
+    <span>Scanned Barcode</span>
+	</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list-header class="my-header">Scanned Barcode</ion-list-header>
+<ion-item class="item-align">{{barcodeData.text}}</ion-item>
+
+<ion-list-header class="my-header">Barcode Format</ion-list-header>
+<ion-item  class="item-align">{{barcodeData.format}}</ion-item>
+
+
+<ion-list-header class="my-header">Product Info</ion-list-header>
+<ion-list>
+<ion-item><span>Name:</span> {{ productname }}</ion-item>
+<ion-item><span>Details:</span> {{ description }}</ion-item>
+<ion-item><span>Price:</span> ${{ avg_price }}</ion-item>
+<ion-item><span class="safety">Safety Rating:</span>
+<ion-icon margin-left="15px" name="thumbs-up"></ion-icon>
+</ion-item>
+
+</ion-list>
+</ion-content>

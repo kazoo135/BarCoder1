@@ -1,0 +1,33 @@
+page-home {
+
+
+
+	p{
+		font-size: 1.2em;
+	}
+
+	div.btn-container{
+		text-align: center;
+		height: auto;
+	}
+	.button-container button{
+		background-color: #fff;
+	}
+	.btn-container button img{
+		width: 90%;
+	}
+
+	h5.tag-line{
+		margin-top:30px;
+	}
+
+	ion-title span{
+		display: inline-block;
+		margin-left:25px; 
+	}
+
+	ion-icon.logo{
+		margin-left: 10px;
+	}
+
+}

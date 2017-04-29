@@ -1,0 +1,10 @@
+{
+  "name": "Barcoder1",
+  "app_id": "e0fa9942",
+  "typescript": true,
+  "v2": true,
+  "proxy":[{
+    "path":"/api",
+    "proxyUrl": "http://api.upcdatabase.org/"
+  }]
+}
