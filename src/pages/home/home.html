@@ -1,13 +1,14 @@
 <ion-header>
-  <ion-navbar color="secondary">
-    <ion-title>
+  <ion-navbar>
+    <ion-title >
       <ion-icon class="logo" name="barcode"></ion-icon>
     <span>Your Barcode Scanner</span>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <div><img src="../../assets/images/foods-1.png"></div>
   <h5 class="tag-line">
   	What about the products we use?
   </h5>
@@ -25,7 +26,7 @@
 
   <div padding class="btn-container">
   <button  ion-button block color="primary"
-  (click)="doScan()"><img src="assets/images/bcode-1.png"></button>
+  (click)="doScan()"></button>
     <p class="howto">
   	Simply focus your phone's camera on a product barcode and tap the one above.
   </p>
