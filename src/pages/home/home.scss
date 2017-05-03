@@ -1,21 +1,20 @@
 page-home {
 
-div.header-img{
-  border:1px solid green;
-  margin-top:5px;
-}
+  div.header-img{
+
+  }
+  h2{
+    text-align: center;
+    font-size:1.5em;
+    font-width:bold;
+    color: $primary-color-text;
+  }
 	p{
 		font-size: 1.2em;
 	}
 	div.btn-container{
 		text-align: center;
 		height: auto;
-	}
-	.button-container button{
-		background-color: #fff;
-	}
-	.btn-container button img{
-		width: 90%;
 	}
 
 	h5.tag-line{
@@ -30,5 +29,12 @@ div.header-img{
 	ion-icon.logo{
 		margin-left: 10px;
 	}
+
+  ion-item.nutr-facts{
+    text-align: center;
+    font-size:1.3em;
+    color:$secondary-text-color;
+  }
+
 
 }

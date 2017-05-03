@@ -8,31 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <div class="header-img"><img src="../../assets/images/foods-1.png"></div>
-  <h5 class="tag-line">
-  	What about the products we use?
-  </h5>
-  <ul>
-  	<li>Are they safe for the environment?</li>
-  	 <li>Are they safe to eat?</li>
-  	<li>What's not on the label?</li>
-
-  </ul>
-<p>Could we scan that barcode and find out?</p>
-<!--   <div padding>
-  	<img src="/assets/images/bcode-1.png">
+  <div class="header-img">
+    <img src="../../assets/images/foods-1.png">
   </div>
- -->
 
   <div padding class="btn-container">
-  <button  ion-button block color="primary"
-  (click)="doScan()"></button>
-    <p class="howto">
-  	Simply focus your phone's camera on a product barcode and tap the one above.
-  </p>
+  <button ion-button block color="secondary"
+  (click)="doScan()">Scan</button>
   </div>
 <ion-list *ngFor="let item of data">
-  <ion-list-header><h2> Product Information</h2></ion-list-header>
+  <ion-list-header><h2>Product</h2></ion-list-header>
   <ion-item>
     <ion-avatar item-left (click)="launchUrl(url=item.link)">
         <img src="{{item.img}}" />
@@ -40,13 +25,10 @@
     <h2>{{item.brandname}}</h2>
     <h3>{{item.gtin_nm}}</h3>
   </ion-item>
-  <ion-item>Nutrional Facts Per Serving:</ion-item>
+  <ion-item class="nutr-facts">Nutritional Facts Per Serving:</ion-item>
   <ion-item>Protien: {{item.protein}} g</ion-item>
   <ion-item>Sugars: {{item.sugars}} g</ion-item>
   <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
   <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
-
-
 </ion-list>
-
 </ion-content>

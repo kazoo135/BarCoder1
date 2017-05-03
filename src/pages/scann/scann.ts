@@ -9,14 +9,11 @@ import { BcodeProvider} from '../../providers/bcode-provider'
 })
 
 export class ScannPage {
-	// private barcodeData;
-	description: string = "STAEDTLER, INC.  pencil sharpener";
-	productname:string = "STAEDTLER pencil sharpener";
-	avg_price: string = "3.50";
+	private barcodeData;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataservice: BcodeProvider) {
-  	// this.barcodeData = this.navParams.get('details');
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public dataservice: BcodeProvider) {
+  	 this.barcodeData = this.navParams.get('details');
 
   	 //  this.dataservice.load().then((data) => {
       // console.log(data);
