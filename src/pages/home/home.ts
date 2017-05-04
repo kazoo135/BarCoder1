@@ -3,8 +3,9 @@ import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ScannPage } from '../scann/scann';
-import { BcodeProvider} from '../../providers/bcode-provider';
-import {InAppBrowser } from '@ionic-native/in-app-browser';
+// import { BcodeProvider} from '../../providers/bcode-provider';
+// import {InAppBrowser } from '@ionic-native/in-app-browser';
+import { StatusBar } from '@ionic-native/status-bar';
 
 
 
@@ -28,11 +29,26 @@ export class HomePage {
   constructor(
     public navCtrl: NavController, public platform:Platform,
     public barcodeScanner: BarcodeScanner,
-    public dataService:BcodeProvider,
-     private iab : InAppBrowser )
+    private statusBar: StatusBar
+    )
+
   {
   		this.navcontroller = navCtrl;
+  }
+ngOnInit(){
 
+  if( this.platform.is('android')){
+    // let status bar overlay webview    // let status bar overlay webview
+    this.statusBar.overlaysWebView(false);
+    this.statusBar.styleLightContent();
+    this.statusBar.backgroundColorByHexString('#689F38');
+    console.log('Android used here');
+  }else{
+    // let status bar overlay webview    // let status bar overlay webview
+    this.statusBar.overlaysWebView(false);
+    // set status bar to some hex color
+    this.statusBar.backgroundColorByHexString('#689F38');
+  }
 
 }
 
@@ -58,44 +74,5 @@ export class HomePage {
   scanDetails(details){
   	this.navCtrl.push(ScannPage, {details:details});
   }
-
-  // launchUrl(url){
-  //   this.platform.ready().then(() => {
-  //       this.iab.create( url, "_system","location=yes" );
-  //   })
-  // }
-
-
-//   ngOnInit(){
-//     this.dataService.getData().then((data) => {
-//       for(let i = 0; i < 10; i++){
-//         if(data[i].fields.gtin_cd === "0033383001531"){
-//           // console.log("Product gtin_cd: " + data[i].fields.gtin_cd);
-//           // console.log("Brand Name: " + data[i].fields.brand_nm);
-//           // console.log("Brand Image: " + data[i].fields.brand_img);
-//           // console.log("Brand Link: " + data[i].fields.brand_link);
-//           this.data =[
-//             {
-//               gtin: data[i].fields.gtin_cd,
-//               brandname: data[i].fields.brand_nm,
-//               gtin_nm:data[i].fields.gtin_nm,
-//               img: data[i].fields.brand_img,
-//               link: data[i].fields.brand_link,
-//               cal: data[i].fields.cal,
-//               cal_from_fat: data[i].fields.cal_from_fat,
-//               ingredients: data[i].fields.ingredients,
-//               protein: data[i].fields.protein_g,
-//               sugars: data[i].fields.sugars_g,
-//               vitamin_a: data[i].fields.vitamin_a,
-//               vitamin_c: data[i].fields.vitamin_c
-//             }
-//           ]
-//         }
-//         console.log(data[i]);
-//       }
-//
-//     });
-// }
-//End of ngOnInit()
 
 }//End of Class
