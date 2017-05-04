@@ -10,9 +10,27 @@ page-scann {
 	}
 
 	.my-header{
-		font-size: 1.2em;
 		text-align: center;
+    background-color: #DCEDC8;
 	}
+  .my-header h2{
+    font-size: 1.2em;
+  }
+  .my-header p{
+    font-size: 1em;
+  }
+  .my-avatar{
+    width:100% !important;
+    height: 100% !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+  }
+
+  .info h2{
+    font-weight:bold;
+    font-size: 1.3em;
+    text-align: center;
+  }
 
 	.item-align{
 		text-align: center;
@@ -24,7 +42,11 @@ page-scann {
   ion-item.nutr-facts{
     text-align: center;
     font-size:1.3em;
-    color:$secondary-text-color;
+
+  }
+  .not-found{
+    text-align: center;
+    background-color: $primary-color-light ;
   }
 
 }

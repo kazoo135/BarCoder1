@@ -17,36 +17,42 @@
 
 
 <ion-content padding>
-<ion-list-header class="my-header">Scanned Barcode</ion-list-header>
-<ion-item class="item-align">{{barcodeData.text}}</ion-item>
-
-<ion-list-header class="my-header">Barcode Format</ion-list-header>
-<ion-item  class="item-align">{{barcodeData.format}}</ion-item>
+  <ion-item class="my-header">
+    <h2>Scanned Barcode</h2>
+    <p>{{barcodeData.text}}</p>
+  </ion-item>
+  <ion-item class="my-header">
+    <h2>Barcode Format</h2>
+    <p>{{barcodeData.format}}</p>
+  </ion-item>
 
 <div *ngIf="foundIt">
   <ion-list *ngFor="let item of data">
-    <ion-list-header class="my-header"><h2>Product</h2></ion-list-header>
+    <ion-list-header class="info"><h2>Product</h2></ion-list-header>
     <ion-item>
-      <ion-avatar item-left (tap)="launchUrl(url=item.link)">
+      <ion-avatar class="my-avatar" item-left (tap)="launchUrl(url=item.link)">
         <img src="{{item.img}}" />
       </ion-avatar>
-      <h2>{{item.brandname}}</h2>
-      <h3>{{item.gtin_nm}}</h3>
+      <h2 color="primary-text"
+      >{{item.brandname}}</h2>
+      <h3 color="secondary-text">{{item.gtin_nm}}</h3>
     </ion-item>
-    <ion-item class="nutr-facts">Nutritional Facts Per Serving:</ion-item>
-    <ion-item>Protien: {{item.protein}} g</ion-item>
-    <ion-item>Sugars: {{item.sugars}} g</ion-item>
+    <ion-item class="nutr-facts" color="primary-text">Nutritional Facts Per Serving:</ion-item>
+    <ion-item>Protien: {{item.protein}}g</ion-item>
+    <ion-item>Sugars: {{item.sugars}}g</ion-item>
     <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
     <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
   </ion-list>
+
+  <ion-card *ngIf="!foundIt">
+    <ion-card-content class="not-found" color="secondary-text">
+      Ooops! Not in our DB Yet
+    </ion-card-content>
+  </ion-card>
 </div>
 
   <div padding="">
-    <ion-card>
-      <ion-card-content>
-        Comming Soon!
-      </ion-card-content>
-    </ion-card>
+
   </div>
 
 </ion-content>

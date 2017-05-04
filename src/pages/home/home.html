@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title >
       <ion-icon class="logo" name="barcode"></ion-icon>
-    <span>Your Barcode Scanner</span>
+    <span>Barcode Scanner</span>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,21 +14,6 @@
 
   <div padding class="btn-container">
   <button ion-button block color="secondary"
-  (click)="doScan()">Scan</button>
+  (click)="doScan()">Scan a Product</button>
   </div>
-<ion-list *ngFor="let item of data">
-  <ion-list-header><h2>Product</h2></ion-list-header>
-  <ion-item>
-    <ion-avatar item-left (click)="launchUrl(url=item.link)">
-        <img src="{{item.img}}" />
-    </ion-avatar>
-    <h2>{{item.brandname}}</h2>
-    <h3>{{item.gtin_nm}}</h3>
-  </ion-item>
-  <ion-item class="nutr-facts">Nutritional Facts Per Serving:</ion-item>
-  <ion-item>Protien: {{item.protein}} g</ion-item>
-  <ion-item>Sugars: {{item.sugars}} g</ion-item>
-  <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
-  <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
-</ion-list>
 </ion-content>

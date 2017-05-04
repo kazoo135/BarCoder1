@@ -2,7 +2,6 @@ page-home {
 
   div.header-img{
     margin-top: 20px;
-
   }
   h2{
     text-align: center;
@@ -17,6 +16,9 @@ page-home {
 		text-align: center;
 		height: auto;
 	}
+  div.btn-container button{
+    letter-spacing: 1.5px;
+  }
 
 	h5.tag-line{
 		margin-top:30px;
@@ -26,16 +28,6 @@ page-home {
 		display: inline-block;
 		margin-left:25px;
 	}
-
-	ion-icon.logo{
-		margin-left: 10px;
-	}
-
-  ion-item.nutr-facts{
-    text-align: center;
-    font-size:1.3em;
-    color:$secondary-text-color;
-  }
 
 
 }

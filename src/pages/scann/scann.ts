@@ -28,15 +28,15 @@ export class ScannPage {
   }
 
   //make sure barcode is at least 13 characters log
-  getBarcode(){
+  checkBarcode(){
     console.log("Scanned Barcode: " + this.barcode);
     console.log("Barcode length: " + this.barcode.length);
     if(this.barcode.length < 13){
       this.barcode = '0' + this.barcode;
     }
     console.log("Barcode length after if: " + this.barcode.length);
-    console.log("Scanned Barcode: " + this.barcode);
-    return this.barcode;
+    console.log("Scanned Barcode after if: " + this.barcode);
+
   }
   launchUrl(url){
     this.platform.ready().then(() => {
@@ -44,15 +44,12 @@ export class ScannPage {
     })
   }
   ngOnInit(){
-
+    this.checkBarcode();
     this.dataservice.getData().then((data) => {
       for(let i = 0; i < data.length; i++){
-        if(data[i].fields.gtin_cd === "57063002003"){
+        if(data[i].fields.gtin_cd === "0857063002522"){
+
           this.foundIt = true;
-           console.log("Product gtin_cd: " + data[i].fields.gtin_cd);
-          console.log("Brand Name: " + data[i].fields.brand_nm);
-          console.log("Brand Image: " + data[i].fields.brand_img);
-          console.log("Brand Link: " + data[i].fields.brand_link);
           this.data =[
             {
               gtin: data[i].fields.gtin_cd,
@@ -71,10 +68,10 @@ export class ScannPage {
           ]
           //this.foundIt = true;
         }
+        console.log("Barcode from ngOnInit: " + this.barcode);
         console.log(data[i]);
       }
     });
-    this.getBarcode();
   }
 
 

@@ -10,8 +10,7 @@ $font-path: "../assets/fonts";
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
-//$button-md-text-color: #212121;
-//$background-color: #FFECB3;
+
 
 
 
@@ -26,17 +25,26 @@ $font-path: "../assets/fonts";
 
 
 //Ionic Defaults
- $colors: (
-   primary:    #387ef5,
-   secondary: #8BC34A,
-   //secondary:  #32db64,
-   danger:     #f53d3d,
-   light: #f4f4f4,
-   dark: #222,
- );
+// $colors: (
+//   primary:    #387ef5,
+//   secondary:  #32db64,
+//   danger:     #f53d3d,
+//   light: #f4f4f4,
+//   dark: #222,
+// );
 
-$toolbar-background:#8BC34A;
+$colors:(
+  primary: #8BC34A,
+  secondary: #8BC34A,
+  danger:  #f53d3d,
+  light: #DCEDC8,
+  dark: #222,
+);
+
+$toolbar-background: #8BC34A;
 $background-color: #F5EFFB;
+
+
 
 
 
