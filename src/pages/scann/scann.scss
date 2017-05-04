@@ -2,7 +2,7 @@ page-scann {
 
 	[ion-title] span{
 		display: block;
-		margin-left:35px; 
+		margin-left:35px;
 	}
 
 	ion-icon.logo{
@@ -21,9 +21,10 @@ page-scann {
 	[ion-item] span{
 		font-weight: bold;
 	}
-
-	[ion-item] span.safety{
-		color: red;
-	}
+  ion-item.nutr-facts{
+    text-align: center;
+    font-size:1.3em;
+    color:$secondary-text-color;
+  }
 
 }
