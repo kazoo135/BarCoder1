@@ -23,6 +23,7 @@
 <ion-list-header class="my-header">Barcode Format</ion-list-header>
 <ion-item  class="item-align">{{barcodeData.format}}</ion-item>
 
+<div *ngIf="foundIt">
   <ion-list *ngFor="let item of data">
     <ion-list-header class="my-header"><h2>Product</h2></ion-list-header>
     <ion-item>
@@ -38,4 +39,14 @@
     <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
     <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
   </ion-list>
+</div>
+
+  <div padding="">
+    <ion-card>
+      <ion-card-content>
+        Comming Soon!
+      </ion-card-content>
+    </ion-card>
+  </div>
+
 </ion-content>
