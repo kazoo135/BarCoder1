@@ -31,18 +31,18 @@ export class HomePage {
   },
     {
       title: 'General Products',
-      source: 'assets/images/foodProducts1.png',
+      source: 'assets/images/food_products1.png',
       alt: 'Image of various food products on store shelves'
     },
     {
       title: 'More Products',
-      source: 'assets/images/foodProducts3.png',
+      source: 'assets/images/foodProduct3.png',
       alt: 'Image of collection of Food Products'
 
     },
     {
       title: 'Healthy Sancks',
-      source: 'assets/images/health-snacks.png',
+      source: 'assets/images/healthy-snacks.png',
       alt: 'Image of Healthy Snacks'
     }
   ]
