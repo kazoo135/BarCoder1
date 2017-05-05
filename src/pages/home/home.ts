@@ -3,8 +3,6 @@ import { NavController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ScannPage } from '../scann/scann';
-// import { BcodeProvider} from '../../providers/bcode-provider';
-// import {InAppBrowser } from '@ionic-native/in-app-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 
 
@@ -22,6 +20,7 @@ export class HomePage {
 	private navcontroller: NavController;
   data = [];
   error:any;
+  //TODO add an image arry to be used at top of page
 
 
 
@@ -35,10 +34,11 @@ export class HomePage {
   {
   		this.navcontroller = navCtrl;
   }
+//  TODO use an ionic hook here instead of ngOnInit()
 ngOnInit(){
 
   if( this.platform.is('android')){
-    // let status bar overlay webview    // let status bar overlay webview
+    // let status bar overlay webview
     this.statusBar.overlaysWebView(false);
     this.statusBar.styleLightContent();
     this.statusBar.backgroundColorByHexString('#689F38');
@@ -64,10 +64,8 @@ ngOnInit(){
   			}
   		}, (error) => {
   			console.log("Error scanning product barcode");
+  		  });
   		});
-
-  		});
-
   }//end of doScan()
 
 //pass barcodeData obj to ScannPage

@@ -31,6 +31,7 @@ export class ScannPage {
   checkBarcode(){
     console.log("Scanned Barcode: " + this.barcode);
     console.log("Barcode length: " + this.barcode.length);
+    //TODO switch(this.barcode) start with 8
     if(this.barcode.length < 13){
       this.barcode = '0' + this.barcode;
     }
@@ -45,6 +46,7 @@ export class ScannPage {
   }
   ngOnInit(){
     this.checkBarcode();
+    //TODO Turn this into a processData() method add more items to data[]
     this.dataservice.getData().then((data) => {
       for(let i = 0; i < data.length; i++){
         if(data[i].fields.gtin_cd === "0857063002522"){
