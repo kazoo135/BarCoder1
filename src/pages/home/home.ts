@@ -4,10 +4,7 @@ import { Platform } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ScannPage } from '../scann/scann';
 import { StatusBar } from '@ionic-native/status-bar';
-import {ViewChild } from '@angular/core';
-import { Slides } from 'ionic-angular';
-
-
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'page-home',
@@ -22,8 +19,9 @@ export class HomePage {
 	private navcontroller: NavController;
   data = [];
   error:any;
-  @ViewChild('slides')slides:Slides;
+
   //TODO add an image arry to be used at top of page
+  @ViewChild('slides')slides: any;
   imgArray = [{
     title: 'Fresh Vegetables',
     source: 'assets/images/foods.png',
@@ -46,9 +44,6 @@ export class HomePage {
       alt: 'Image of Healthy Snacks'
     }
   ]
-
-
-
 
   constructor(
     public navCtrl: NavController, public platform:Platform,
@@ -97,7 +92,6 @@ ngOnInit(){
   scanDetails(details){
   	this.navCtrl.push(ScannPage, {details:details});
   }
-
   //next slide
   next(){
     this.slides.slideNext();
@@ -107,4 +101,5 @@ ngOnInit(){
   prev(){
     this.slides.slidePrev();
   }
+
 }//End of Class
