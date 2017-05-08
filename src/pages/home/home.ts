@@ -93,14 +93,6 @@ ngOnInit(){
   scanDetails(details){
   	this.navCtrl.push(ScannPage, {details:details});
   }
-  //next slide
-  // next(){
-  //   this.slides.slideNext();
-  // }
-  //
-  // //previous slide
-  // prev(){
-  //   this.slides.slidePrev();
-  // }
+
 
 }//End of Class
