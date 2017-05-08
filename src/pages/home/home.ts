@@ -5,11 +5,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ScannPage } from '../scann/scann';
 import { StatusBar } from '@ionic-native/status-bar';
 // import { ViewChild } from '@angular/core';
-import {IntroPage } from '../intro/intro';
-import {componentModuleUrl} from "@angular/compiler";
+// import {IntroPage } from '../intro/intro';
+
 
 @Component({
-  selector:'intro-page',
+  selector:'page-intro',
   templateUrl: '../intro/intro.html'
 })
 @Component({
@@ -75,13 +75,13 @@ ngOnInit(){
   	this.navCtrl.push(ScannPage, {details:details});
   }
   //next slide
-  next(){
-    this.slides.slideNext();
-  }
-
-  //previous slide
-  prev(){
-    this.slides.slidePrev();
-  }
+  // next(){
+  //   this.slides.slideNext();
+  // }
+  //
+  // //previous slide
+  // prev(){
+  //   this.slides.slidePrev();
+  // }
 
 }//End of Class
