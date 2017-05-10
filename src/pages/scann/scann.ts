@@ -55,6 +55,8 @@ export class ScannPage {
     this.processData();
   }
 processData(){
+    //TODO test this method with an invalid gtin_cd to make sure foundIt works.
+  //TODO figure out how to get this gtin_cd to work with product that is in dataset
   this.dataservice.getData().then((data) => {
     for(let i = 0; i < data.length; i++){
       if(data[i].fields.gtin_cd === "0039400018070"){
