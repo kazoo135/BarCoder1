@@ -29,17 +29,13 @@
   </ion-card>
   <div class="cats">
     <button class="cat-btn" id="ingrediants" ion-button block color="secondary" (click)="showHide($event)">Ingredients</button>
-    <ion-list [hidden]="hideIngredients">
-      <ion-item>Ingredient 1</ion-item>
-      <ion-item>Ingredient 2</ion-item>
-      <ion-item>ingredient 3</ion-item>
+    <ion-list [hidden]="hideIngredients" *ngFor="let item of data">
+      <ion-item>{{ item.ingredients}}</ion-item>
     </ion-list>
   </div>
 <div class="cats">
   <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Vitamins</button>
   <ion-list [hidden]="hideVitamins" *ngFor="let item of data">
-    <ion-item>Protien: {{item.protein}}g</ion-item>
-    <ion-item>Sugars: {{item.sugars}}g</ion-item>
     <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
     <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
   </ion-list>
@@ -47,19 +43,19 @@
   <div class="cats">
   <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Minerals</button>
   <ion-list [hidden]="hideMinerals" *ngFor="let item of data">
-    <ion-item>Protien: {{item.protein}}g</ion-item>
-    <ion-item>Sugars: {{item.sugars}}g</ion-item>
-    <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
-    <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
+    <ion-item>Calcium: {{item.calcium}}g</ion-item>
+    <ion-item>Iron: {{item.iron}}g</ion-item>
+    <ion-item>Potassium: {{item.potassium}}g </ion-item>
+    <ion-item>Sodium: {{item.sodium}}g</ion-item>
   </ion-list>
 </div>
   <div class="cats">
     <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Carbs</button>
     <ion-list [hidden]="hideCarbs" *ngFor="let item of data">
-      <ion-item>Protien: {{item.protein}}g</ion-item>
+      <ion-item>Total Carbs {{item.total_carbs}}g</ion-item>
+      <ion-item>Total Fat: {{item.total_fat}}g</ion-item>
+      <ion-item>Cholesteral: {{item.chol}}g </ion-item>
       <ion-item>Sugars: {{item.sugars}}g</ion-item>
-      <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
-      <ion-item>Vitamin C: {{item.vitamin_c}}g</ion-item>
     </ion-list>
   </div>
   <ion-card *ngIf="!foundIt">

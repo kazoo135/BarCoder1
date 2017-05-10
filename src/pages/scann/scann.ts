@@ -49,66 +49,71 @@ export class ScannPage {
       this.iab.create( url, "_system","location=yes" );
     })
   }
-  ngOnInit(){
+
+  ionViewDidLoad(){
     this.checkBarcode();
-    //TODO Turn this into a processData() method add more items to data[]
-    this.dataservice.getData().then((data) => {
-      for(let i = 0; i < data.length; i++){
-        if(data[i].fields.gtin_cd === "0857063002522"){
-
-          this.foundIt = true;
-          this.data =[
-            {
-              gtin: data[i].fields.gtin_cd,
-              brandname: data[i].fields.brand_nm,
-              gtin_nm:data[i].fields.gtin_nm,
-              img: data[i].fields.brand_img,
-              link: data[i].fields.brand_link,
-              cal: data[i].fields.cal,
-              cal_from_fat: data[i].fields.cal_from_fat,
-              ingredients: data[i].fields.ingredients,
-              protein: data[i].fields.protein_g,
-              sugars: data[i].fields.sugars_g,
-              vitamin_a: data[i].fields.vitamin_a,
-              vitamin_c: data[i].fields.vitamin_c
-            }
-          ]
-          //this.foundIt = true;
-        }
-        console.log("Barcode from ngOnInit: " + this.barcode);
-        console.log(data[i]);
-      }
-    });
+    this.processData();
   }
-
+processData(){
+  this.dataservice.getData().then((data) => {
+    for(let i = 0; i < data.length; i++){
+      if(data[i].fields.gtin_cd === "0039400018070"){
+        this.foundIt = true;
+        this.data =[
+          {
+            gtin: data[i].fields.gtin_cd,
+            brandname: data[i].fields.brand_nm,
+            gtin_nm:data[i].fields.gtin_nm,
+            img: data[i].fields.brand_img,
+            link: data[i].fields.brand_link,
+            cal: data[i].fields.cal,
+            cal_from_fat: data[i].fields.cal_from_fat,
+            calcium: data[i].fields.calcium,
+            chol: data[i].fields.chol_dv,
+            iron: data[i].fields.iron,
+            potassium: data[i].fields.pot_div,
+            sodium: data[i].fields.sod_mg,
+            ingredients: data[i].fields.ingredients,
+            protein: data[i].fields.protein_g,
+            sugars: data[i].fields.sugars_g,
+            total_carbs: data[i].fields.tot_carb_g,
+            total_fat: data[i].fields.tot_fat_g,
+            vitamin_a: data[i].fields.vitamin_a,
+            vitamin_c: data[i].fields.vitamin_c
+          }
+        ]
+        //this.foundIt = true;
+      }
+      console.log("Barcode from ngOnInit: " + this.barcode);
+      console.log(data[i]);
+    }
+  });
+}
 showHide(event){
 
   let value = event.target.innerHTML;
   if(value == "Ingredients"){
     if(this.hideIngredients == true){
       this.hideIngredients = false;
-      event.stopPropagation();
+
     }else{
       this.hideIngredients = true;
     }
   }else if( value == "Vitamins"){
-    if(this.hideVitamins = true){
+    if(this.hideVitamins == true){
       this.hideVitamins = false;
-      event.stopPropagation();
     }else {
       this.hideVitamins = true;
     }
   }else if(value == "Minerals"){
-    if(this.hideMinerals = true){
+    if(this.hideMinerals == true){
       this.hideMinerals = false;
-      event.stopPropagation();
     }else{
       this.hideMinerals = true;
     }
   }else if(value == "Carbs"){
-    if(this.hideCarbs = true){
+    if(this.hideCarbs == true){
       this.hideCarbs = false;
-      event.stopPropagation();
     }else {
       this.hideCarbs = true;
     }
