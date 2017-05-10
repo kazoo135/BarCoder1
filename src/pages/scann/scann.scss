@@ -8,41 +8,27 @@ page-scann {
 	ion-icon.logo{
 		margin-left: 10px;
 	}
+  .product-info{
+    margin-bottom: 10px;
+  }
+  .my-header{
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .my-header img{
+    width:100%;
+    height: 100%;
+  }
 
-	.my-header{
-		text-align: center;
-    background-color: #DCEDC8;
-	}
-  .my-header h2{
+  .prod-name{
     font-size: 1.2em;
   }
-  .my-header p{
-    font-size: 1em;
+
+  .cat-btn{
+    border-radius: 6px;
   }
-  .my-avatar{
-    width:100% !important;
-    height: 100% !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
-  }
-
-  .info h2{
-    font-weight:bold;
-    font-size: 1.3em;
-    text-align: center;
-  }
-
-	.item-align{
-		text-align: center;
-	}
-
-	[ion-item] span{
-		font-weight: bold;
-	}
-  ion-item.nutr-facts{
-    text-align: center;
-    font-size:1.3em;
-
+  .cats{
+    margin-bottom: 10px;
   }
   .not-found{
     text-align: center;
