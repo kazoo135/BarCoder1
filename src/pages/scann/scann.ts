@@ -15,6 +15,7 @@ export class ScannPage {
 	data = [];
 	barcode:string;
 	foundIt:boolean;
+  hideIt: boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -76,10 +77,11 @@ export class ScannPage {
     });
   }
 
-
-
-
-
-
+showHide(event){
+  console.log(event);
+  console.log(event.type);
+  console.log(event.target);
 
 }
+
+}//end of ScannPage class
