@@ -18,19 +18,18 @@
 <ion-content padding>
 
 <div *ngIf="foundIt">
-  <ion-card class="product-info">
-    <ion-card-header class="my-header">Product</ion-card-header>
-    <ion-card-content *ngFor="let item of data">
-      <ion-avatar class="my-avatar" item-left (tap)="launchUrl(url=item.link)">
-        <img src="{{ item.img}}" />
-      </ion-avatar>
+  <ion-card class="product-info" *ngFor="let item of data">
+    <ion-card-header class="my-header" (tap)="launchUrl(url=item.link)">
+      <img src="{{ item.img}}" />
+    </ion-card-header>
+    <ion-card-content class="prod-name">
       <h2 color="primary-text">{{ item.brandname}}</h2>
       <h3 color="secondary-text">{{ item.gtin_nm}}</h3>
     </ion-card-content>
   </ion-card>
   <div class="cats">
     <button class="cat-btn" id="ingrediants" ion-button block color="secondary" (click)="showHide($event)">Ingredients</button>
-    <ion-list [hidden]="hideIt">
+    <ion-list [hidden]="hideIngredients">
       <ion-item>Ingredient 1</ion-item>
       <ion-item>Ingredient 2</ion-item>
       <ion-item>ingredient 3</ion-item>
@@ -38,7 +37,7 @@
   </div>
 <div class="cats">
   <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Vitamins</button>
-  <ion-list [hidden]="hideIt" *ngFor="let item of data">
+  <ion-list [hidden]="hideVitamins" *ngFor="let item of data">
     <ion-item>Protien: {{item.protein}}g</ion-item>
     <ion-item>Sugars: {{item.sugars}}g</ion-item>
     <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
@@ -47,7 +46,7 @@
 </div>
   <div class="cats">
   <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Minerals</button>
-  <ion-list [hidden]="hideIt" *ngFor="let item of data">
+  <ion-list [hidden]="hideMinerals" *ngFor="let item of data">
     <ion-item>Protien: {{item.protein}}g</ion-item>
     <ion-item>Sugars: {{item.sugars}}g</ion-item>
     <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>
@@ -56,7 +55,7 @@
 </div>
   <div class="cats">
     <button class="cat-btn" ion-button block color="secondary" (click)="showHide($event)">Carbs</button>
-    <ion-list [hidden]="hideIt" *ngFor="let item of data">
+    <ion-list [hidden]="hideCarbs" *ngFor="let item of data">
       <ion-item>Protien: {{item.protein}}g</ion-item>
       <ion-item>Sugars: {{item.sugars}}g</ion-item>
       <ion-item>Vitamin A: {{item.vitamin_a}}g </ion-item>

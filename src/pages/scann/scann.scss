@@ -15,23 +15,14 @@ page-scann {
     text-align: center;
     font-size: 1.3em;
   }
-
-
-  .my-avatar{
-    width:100% !important;
-    height: 100% !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
-  }
-  .my-avatar img{
-    text-align: center;
+  .my-header img{
+    width:100%;
+    height: 100%;
   }
 
-
-
-	.item-align{
-		text-align: center;
-	}
+  .prod-name{
+    font-size: 1.2em;
+  }
 
   .cat-btn{
     border-radius: 6px;
