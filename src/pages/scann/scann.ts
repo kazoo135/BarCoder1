@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BcodeProvider} from '../../providers/bcode-provider';
 import { Platform } from 'ionic-angular';
 import {InAppBrowser } from '@ionic-native/in-app-browser';
-import {el} from "@angular/platform-browser/testing/browser_util";
+
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ScannPage {
 	private barcodeData;
 	data = [];
 	barcode:string;
-	foundIt:boolean;
+	foundIt:boolean = false;
   hideIngredients: boolean = true;
   hideVitamins:boolean =true;
   hideMinerals: boolean = true;
@@ -36,7 +36,7 @@ export class ScannPage {
   checkBarcode(){
     console.log("Scanned Barcode: " + this.barcode);
     console.log("Barcode length: " + this.barcode.length);
-    //TODO switch(this.barcode) start with 8
+    //TODO switch(this.barcode) start with  or for loop
     if(this.barcode.length < 13){
       this.barcode = '0' + this.barcode;
     }
@@ -55,9 +55,11 @@ export class ScannPage {
     this.processData();
   }
 processData(){
+    //TODO test this method with an invalid gtin_cd to make sure foundIt works.
+  //TODO figure out how to get this gtin_cd to work with product that is in dataset
   this.dataservice.getData().then((data) => {
     for(let i = 0; i < data.length; i++){
-      if(data[i].fields.gtin_cd === "0039400018070"){
+      if(data[i].fields.gtin_cd === this.barcode){
         this.foundIt = true;
         this.data =[
           {
@@ -82,13 +84,15 @@ processData(){
             vitamin_c: data[i].fields.vitamin_c
           }
         ]
-        //this.foundIt = true;
+
       }
-      console.log("Barcode from ngOnInit: " + this.barcode);
-      console.log(data[i]);
+      console.log("Barcode from ionViewDidLoad: " + this.barcode);
+      console.log("Product Number: " + i);
+      console.log( data[i]);
     }
   });
-}
+}//End of processData()
+
 showHide(event){
 
   let value = event.target.innerHTML;
