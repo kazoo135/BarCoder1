@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BcodeProvider} from '../../providers/bcode-provider';
 import { Platform } from 'ionic-angular';
 import {InAppBrowser } from '@ionic-native/in-app-browser';
-import {el} from "@angular/platform-browser/testing/browser_util";
+
 
 
 @Component({
