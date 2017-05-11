@@ -59,7 +59,7 @@ processData(){
   //TODO figure out how to get this gtin_cd to work with product that is in dataset
   this.dataservice.getData().then((data) => {
     for(let i = 0; i < data.length; i++){
-      if(data[i].fields.gtin_cd === "39400018070"){
+      if(data[i].fields.gtin_cd === this.barcode){
         this.foundIt = true;
         this.data =[
           {
@@ -84,13 +84,15 @@ processData(){
             vitamin_c: data[i].fields.vitamin_c
           }
         ]
-        //this.foundIt = true;
+
       }
-      console.log("Barcode from ngOnInit: " + this.barcode);
-      console.log(data[i]);
+      console.log("Barcode from ionViewDidLoad: " + this.barcode);
+      console.log("Product Number: " + i);
+      console.log( data[i]);
     }
   });
-}
+}//End of processData()
+
 showHide(event){
 
   let value = event.target.innerHTML;
