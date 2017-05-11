@@ -58,10 +58,11 @@
       <ion-item>Sugars: {{item.sugars}}g</ion-item>
     </ion-list>
   </div>
-  <ion-card *ngIf="!foundIt">
-    <ion-card-content class="not-found" color="secondary-text">
-      Ooops! Not in our DB Yet
-    </ion-card-content>
-  </ion-card>
 </div>
+  <ion-card *ngIf="!foundIt">
+  <ion-card-content class="not-found" color="secondary-text">
+    Ooops! Not in our DB Yet. How about you try another product.
+    <ion-icon name="thumbs-up"></ion-icon>
+  </ion-card-content>
+</ion-card>
 </ion-content>

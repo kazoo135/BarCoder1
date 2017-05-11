@@ -15,7 +15,7 @@ export class ScannPage {
 	private barcodeData;
 	data = [];
 	barcode:string;
-	foundIt:boolean;
+	foundIt:boolean = false;
   hideIngredients: boolean = true;
   hideVitamins:boolean =true;
   hideMinerals: boolean = true;
@@ -36,7 +36,7 @@ export class ScannPage {
   checkBarcode(){
     console.log("Scanned Barcode: " + this.barcode);
     console.log("Barcode length: " + this.barcode.length);
-    //TODO switch(this.barcode) start with 8
+    //TODO switch(this.barcode) start with  or for loop
     if(this.barcode.length < 13){
       this.barcode = '0' + this.barcode;
     }
@@ -59,7 +59,7 @@ processData(){
   //TODO figure out how to get this gtin_cd to work with product that is in dataset
   this.dataservice.getData().then((data) => {
     for(let i = 0; i < data.length; i++){
-      if(data[i].fields.gtin_cd === "0039400018070"){
+      if(data[i].fields.gtin_cd === "39400018070"){
         this.foundIt = true;
         this.data =[
           {
