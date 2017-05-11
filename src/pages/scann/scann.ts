@@ -84,12 +84,12 @@ processData(){
             vitamin_c: data[i].fields.vitamin_c
           }
         ]
-
       }
       console.log("Barcode from ionViewDidLoad: " + this.barcode);
       console.log("Product Number: " + i);
       console.log( data[i]);
     }
+
   });
 }//End of processData()
 

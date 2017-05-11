@@ -34,7 +34,8 @@
   <div class="cats">
     <button class="cat-btn" id="ingrediants" ion-button block color="secondary" (click)="showHide($event)">Ingredients</button>
     <ion-list [hidden]="hideIngredients" *ngFor="let item of data">
-      <ion-item>{{ item.ingredients}}</ion-item>
+      <ion-item *ngIf="item.ingredients">{{ item.ingredients }}</ion-item>
+      <ion-item *ngIf="!item.ingredients">Hmmm No Ingredients Listed</ion-item>
     </ion-list>
   </div>
 <div class="cats">
